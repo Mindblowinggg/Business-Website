@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+   
+}
+
+@media (min-width: 300px) and (max-width: 640px) {
+    .formm{
+        width: 80%;
+    }
+
+   
+}
+
+
+@media (min-width: 500px) and (max-width: 700px) {
+
+    .logoimgs {
+
+        scale: 1.4;
+    }
+    
+}
+
+@media (min-width: 100px) and (max-width: 700px) {
+
+
+    .welcome {
+        font-size: 15px;
+        margin-top: 15px;
+
+    }
+
+    .maintext {
+        text-align: center;
+        font-size: 30px;
+        line-height: 45px;
+        margin-bottom: 20px;
+
+
+    }
+
+}
+
+@media (min-width: 0px) and (max-width: 400px) {
+    .icons {
+        gap: 20px;
+        flex-shrink: initial;
+    }
+
+    .learnmore>button {
+        padding: 12px 20px 12px 20px;
+        font-size: 18px;
+    }
+
+    .learnmore {
+        margin-top: 20px;
+    }
+
+    .Logos {
+
+        display: flex;
+        gap: 50px;
+        margin-bottom: 0;
+        justify-items: center;
+        /* Center items within their grid cells */
+        align-items: center;
+        /* Vertically align items within their grid cells */
+    }
+
+    .logoimgs {
+
+        width: 70px;
+        height: 40px;
+    }
+
+    .partnerss>p:nth-child(3) {
+        font-size: 16px;
+        padding: 0;
+
+    }
+
+
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+
+    .icons {
+
+        gap: 30px;
+    }
+
+    .logoimgs {
+        scale: 1.5;
+        width: 65px;
+        height: 40px;
+    }
+
+    .learnmore>button {
+        padding: 12px 20px 12px 20px;
+        font-size: 18px;
+    }
+
+    .learnmore {
+        margin-top: 20px;
+
+    }
+}
+
+@media (min-width: 500px) and (max-width: 640px) {
+    .icons {
+
+        gap: 50px;
+    }
+
+    .logoimgs {
+        width: 70px;
+        height: 50px;
+
+    }
+
+    .learnmore>button {
+        padding: 12px 20px 12px 20px;
+        font-size: 18px;
+    }
+
+    .learnmore {
+        margin-top: 20px;
+
+    }
+
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+
+    .container>div:nth-child(2) {
+        width: 70%;
+    }
+
+    .welcome {
+        font-size: 15px;
+        margin-top: 15px;
+
+    }
+
+    .logoimgs {
+        scale: 1.4;
+    }
+
+    .maintext {
+        text-align: center;
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .navbar {
+        gap: 100px;
+    }
+
+   
+}
+
