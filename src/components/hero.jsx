@@ -12,7 +12,7 @@ const Hero = () => {
         {/* Left Content Area */}
         <div className="xl:w-[50%] w-full text-white">
           <p className="welcome flex justify-center lg:justify-start xl:text-xl font-bold uppercase  lg:mb-3.5  tracking-[0.4em]">
-            Welcome
+            Welcome aman kahar
           </p>
           <h1 className="maintext w-full flex justify-center lg:justify-start  lg:mb-3.5 mb-2 leading-14 text-[30px] tracking-tight text-justify font-semibold">
             Lorem ipsum dolor sit
