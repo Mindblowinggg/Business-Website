@@ -1,23 +1,24 @@
 import React from "react";
-import { motion } from "framer-motion"; // motion import
-import logo from "/assets/logo.png";
+import { motion } from "framer-motion";
+import logo from "/assets/logo.png"; // सुनिश्चित करें कि लोगो public/assets फोल्डर में है
 import { IoMdMenu } from "react-icons/io";
-import "../index.css";
+import "../index.css"; // अगर यह CSS फाइल मौजूद है
 import { IoIosArrowDown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { useState, useEffect } from "react";
-import { navLinks } from "../utils/constants";
+import { navLinks } from "../utils/constants"; // सुनिश्चित करें कि navLinks सही पाथ से आ रहे हैं
 import { NavLink } from "react-router-dom";
 
-// ✨ NavLink को Framer Motion कंपोनेंट में बदलें ✨
+// NavLink को Framer Motion कंपोनेंट में बदलें
 const MotionNavLink = motion(NavLink);
 
 const Navbar = () => {
   const [openMainDropdown, setOpenMainDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
-  const [menuopen, setmenuopen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [menuopen, setmenuopen] = useState(false); // मोबाइल मेनू ओपन/क्लोज के लिए
+  const [scrolled, setScrolled] = useState(false); // स्क्रॉल इफेक्ट के लिए
 
+  // स्क्रॉल हैंडलिंग
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 10) {
@@ -28,12 +29,13 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); // कंपोनेंट माउंट होने पर एक बार चलाएं
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  // NavLink के लिए क्लास नाम जनरेट करने के फंक्शन
   const getNavLinkClass = ({ isActive }) =>
     `flex px-2 text-lg font-semibold transition duration-300 ${
       isActive
@@ -69,13 +71,14 @@ const Navbar = () => {
         `}
     >
       <div className="flex justify-between items-center px-4 py-2">
+        {/* Logo and Site Title */}
         <div className="flex justify-center items-center">
           <motion.img
             initial={{ scale: 2 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             src={logo}
-            alt=" "
+            alt="Website Logo"
             className="h-8 lg:h-full"
           />
 
@@ -88,12 +91,14 @@ const Navbar = () => {
             start
           </motion.h1>
         </div>
-        {/* Desktop Navbar */}
-        <motion.div className=" navbar gap-20 hidden px-2 lg:flex items-center">
+
+        {/* Desktop Navbar (Large Screens) */}
+        <motion.div className="navbar gap-20 hidden px-2 lg:flex items-center">
           {navLinks.map((link, index) => (
             <div
               key={link.name}
               className="relative"
+              // Desktop: onMouseEnter/onMouseLeave for hover dropdowns
               onMouseEnter={() =>
                 link.dropdown && setOpenMainDropdown(link.name)
               }
@@ -114,13 +119,14 @@ const Navbar = () => {
                 )}
               </MotionNavLink>
 
-              {/* Main Dropdown Menu */}
+              {/* Main Dropdown Menu (Desktop) */}
               {link.dropdown && openMainDropdown === link.name && (
                 <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-35 z-10 ">
                   {link.dropdown.map((dropdownItem, index) => (
                     <div
                       key={dropdownItem.name}
                       className="relative"
+                      // Desktop: onMouseEnter/onMouseLeave for sub-dropdowns
                       onMouseEnter={() =>
                         dropdownItem.dropdown &&
                         setOpenSubDropdown(dropdownItem.name)
@@ -129,7 +135,6 @@ const Navbar = () => {
                         dropdownItem.dropdown && setOpenSubDropdown(null)
                       }
                     >
-                      {/* ✨ Change <a> to <MotionNavLink> for dropdown items ✨ */}
                       <MotionNavLink
                         initial={{ opacity: 0, x: 130 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -145,19 +150,18 @@ const Navbar = () => {
                         )}
                       </MotionNavLink>
 
-                      {/* Sub-Dropdown Menu */}
+                      {/* Sub-Dropdown Menu (Desktop) */}
                       {dropdownItem.dropdown &&
                         openSubDropdown === dropdownItem.name && (
                           <div className="absolute top-0 left-full bg-white shadow-lg rounded-md py-2 w-40 z-20 ">
                             {dropdownItem.dropdown.map(
-                              (subdropdownItem, index) => (
-                                // ✨ Change <a> to <MotionNavLink> for sub-dropdown items ✨
+                              (subdropdownItem, subIndex) => (
                                 <MotionNavLink
                                   initial={{ opacity: 0, x: 130 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{
                                     duration: 0.04,
-                                    delay: 0.09 * index,
+                                    delay: 0.09 * subIndex,
                                   }}
                                   to={subdropdownItem.href}
                                   key={subdropdownItem.name}
@@ -176,13 +180,14 @@ const Navbar = () => {
             </div>
           ))}
         </motion.div>
+
         {/* Mobile Menu Button */}
         <motion.div
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           onClick={() => setmenuopen(!menuopen)}
-          className=" flex lg:hidden text-white justify-center items-center cursor-pointer"
+          className="flex lg:hidden text-white justify-center items-center cursor-pointer"
         >
           {menuopen ? (
             <RxCross1 className="w-8 h-8" />
@@ -192,7 +197,7 @@ const Navbar = () => {
         </motion.div>
       </div>
 
-      {/* Mobile Navigation Links */}
+      {/* Mobile Navigation Links (Small Screens) */}
       {menuopen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -202,16 +207,16 @@ const Navbar = () => {
         >
           {navLinks.map((link, index) => (
             <div key={link.name} className="relative">
-              {/* ✨ Change <a> to <MotionNavLink> for mobile main links ✨ */}
               <MotionNavLink
                 initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.15, ease: "easeOut" }}
                 to={link.href}
                 className={getMobileLinkClass}
-                // Toggle dropdown or close menu if no dropdown
-                onClick={() => {
+                // Mobile: Only onClick for dropdowns. No onMouseEnter/onMouseLeave here.
+                onClick={(e) => {
                   if (link.dropdown) {
+                    e.preventDefault(); // Prevent navigation for dropdown parent link
                     setOpenMainDropdown(
                       openMainDropdown === link.name ? null : link.name
                     );
@@ -235,16 +240,16 @@ const Navbar = () => {
                 <div className="bg-[#63ad85] py-2">
                   {link.dropdown.map((dropdownItem, index) => (
                     <div key={dropdownItem.name} className="relative">
-                      {/* ✨ Change <a> to <MotionNavLink> for mobile dropdown items ✨ */}
                       <MotionNavLink
                         initial={{ opacity: 0, y: 0 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.15, ease: "easeOut" }}
                         to={dropdownItem.href}
                         className={getMobileSubLinkClass}
-                        // Toggle sub-dropdown or close mobile menu
-                        onClick={() => {
+                        // Mobile: Only onClick for sub-dropdowns. No onMouseEnter/onMouseLeave here.
+                        onClick={(e) => {
                           if (dropdownItem.dropdown) {
+                            e.preventDefault(); // Prevent navigation for sub-dropdown parent link
                             setOpenSubDropdown(
                               openSubDropdown === dropdownItem.name
                                 ? null
@@ -270,7 +275,6 @@ const Navbar = () => {
                         openSubDropdown === dropdownItem.name && (
                           <div className="bg-[#5fa381] py-2">
                             {dropdownItem.dropdown.map((subdropdownItem) => (
-                              // ✨ Change <a> to <MotionNavLink> for mobile sub-dropdown items ✨
                               <MotionNavLink
                                 key={subdropdownItem.name}
                                 to={subdropdownItem.href}
