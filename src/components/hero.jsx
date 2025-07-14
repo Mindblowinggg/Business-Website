@@ -15,7 +15,7 @@ const Hero = () => {
             Welcome 
           </p>
           <h1 className="maintext w-full flex justify-center lg:justify-start  lg:mb-3.5 mb-2 leading-14 text-[30px] tracking-tight text-justify font-semibold">
-            I LOVE YOU VL
+            AMAN KAHAR
           </h1>
           <p className="w-full mb-8  flex justify-center lg:justify-start tracking-tight text-gray-100 text-justify sm:text-lg ">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
