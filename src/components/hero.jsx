@@ -1,4 +1,4 @@
-import heroimg from "../assets/heroimage.png";
+import heroimg from "/assets/heroimage.png";
 import React from "react";
 import "../index.css";
 import  {motion}  from "framer-motion";

@@ -50,27 +50,27 @@ export { navLinks };
  const partnerLogos = [
     {
       name: "Google",
-      src: "src/assets/google.png",
+      src: "/assets/google.png",
       alt: "Google Logo",
     },
     {
       name: "Microsoft",
-      src: "src/assets/microsoft.png",
+      src: "/assets/microsoft.png",
       alt: "Microsoft Logo",
     },
     {
       name: "Airbnb",
-      src: "src/assets/airnub.png",
+      src: "/assets/airnub.png",
       alt: "Airbnb Logo",
     },
     {
       name: "Facebook",
-      src: "src/assets/fb.png",
+      src: "/assets/fb.png",
       alt: "Facebook Logo",
     },
     {
       name: "Spotify",
-      src: "src/assets/spotify.png",
+      src: "/assets/spotify.png",
       alt: "Spotify Logo",
     },
   ];
@@ -86,35 +86,35 @@ export { navLinks };
       name: "vimita kahar",
       role: "CEO",
       bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "src/assets/MEMBER1.jpg",
+      image: "/assets/MEMBER1.jpg",
     },
     {
       id: 2,
       name: "mohit",
       role: "CTO",
       bio: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "src/assets/MEMBER2.jpg",
+      image: "/assets/MEMBER2.jpg",
     },
     {
       id: 3,
       name: "anuj",
       role: "Lead Designer",
       bio: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-      image: "src/assets/MEMBER3.jpg",
+      image: "/assets/MEMBER3.jpg",
     },
     {
       id: 4,
       name: "divyanshi",
       role: "Marketing Head",
       bio: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
-      image: "src/assets/MEMBER4.jpg",
+      image: "/assets/MEMBER4.jpg",
     },
     {
       id: 5,
       name: "Aniket",
       role: "HR Manager",
       bio: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-      image: "src/assets/MEMBER5.jpg",
+      image: "/assets/MEMBER5.jpg",
     },
   ];
   export {teamMembers};

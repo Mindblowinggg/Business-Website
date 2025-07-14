@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // motion import
-import logo from "../assets/logo.png";
+import logo from "/assets/logo.png";
 import { IoMdMenu } from "react-icons/io";
 import "../index.css";
 import { IoIosArrowDown } from "react-icons/io";

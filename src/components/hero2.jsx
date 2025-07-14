@@ -1,4 +1,4 @@
-import hero2 from "../assets/hero2.jpg";
+import hero2 from "/assets/hero2.jpg";
 import React from "react";
 import "../index.css";
 
