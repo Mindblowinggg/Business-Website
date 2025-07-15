@@ -15,8 +15,8 @@ const Hero = () => {
           <h1 className="maintext w-full flex justify-center lg:justify-start lg:mb-3.5 mb-2 leading-14 text-[30px] tracking-tight text-justify font-semibold">
             AMAN KAHAR
           </h1>
-          <p className="w-full mb-8 flex justify-center lg:justify-start tracking-tight text-gray-100 text-justify sm:text-lg ">
-            Driving innovation and delivering robust solutions for enterprises worldwide. We leverage cutting-edge technology to help businesses streamline operations, enhance productivity, and achieve sustainable growth. Explore how our expertise can transform your vision into reality.
+          <p className="w-full mb-8 flex justify-center lg:justify-start tracking-tight text-gray-100  text-justify sm:text-lg ">
+            We build smart solutions for businesses everywhere. We use new tech to boost your efficiency, productivity, and growth.
           </p>
 
           <div className="flex justify-center lg:justify-start">
