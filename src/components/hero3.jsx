@@ -20,7 +20,7 @@ const Hero3 = () => {
           </p>
 
           <div className="flex justify-center lg:justify-start">
-            <button className="bg-black cursor-pointer font-semibold rounded-lg text-lg  transition duration-300 hover:bg-gray-600  text-white px-12 py-3 ">
+            <button className="bg-black cursor-pointer font-semibold rounded-lg text-lg  transition duration-300 hover:bg-gray-600 text-white px-12 py-3 ">
               Learn More
             </button>
           </div>
