@@ -6,16 +6,16 @@ const Partners = () => {
   return (
     <>
       <div className="partnerss overflow-hidden bg-white ">
-        <p className="text-[#74C69D] text-[16px] tracking-widest  font-bold sm:text-lg justify-center flex items-center">
-          PARTNERS
+        <p className="text-[#74C69D] text-[16px] tracking-widest font-bold sm:text-lg justify-center flex items-center">
+          OUR PARTNERS
         </p>
 
-        <p className="text-xl sm:text-3xl font-bold p-5 justify-center flex items-center  ">
-          Lorem, ipsum dolor
+        <p className="text-xl sm:text-3xl font-bold p-5 justify-center flex items-center ">
+          Trusted Collaborations for Success
         </p>
 
         <p className=" text-center justify-center flex items-center ">
-          Lorem ipsum dolor sit amet consectetur adipisicing
+          We're proud to collaborate with industry leaders and innovative companies to deliver exceptional value.
         </p>
 
         <Marquee
@@ -30,14 +30,14 @@ const Partners = () => {
                 key={logo.name}
                 src={logo.src}
                 alt={logo.alt}
-                className="logoimgs h-12 sm:w-20  md:w-20 lg:w-35  object-contain  "
+                className="logoimgs h-12 sm:w-20 md:w-20 lg:w-35 object-contain "
               />
             ))}
           </motion.div>
         </Marquee>
 
         <div className="learnmore flex justify-center items-center sm:mt-8">
-          <button className="bg-black text-white px-8 py-3 cursor-pointer font-semibold rounded-lg text-lg  transition duration-300 hover:bg-gray-600 ">
+          <button className="bg-black text-white px-8 py-3 cursor-pointer font-semibold rounded-lg text-lg transition duration-300 hover:bg-gray-600 ">
             Learn More
           </button>
         </div>
