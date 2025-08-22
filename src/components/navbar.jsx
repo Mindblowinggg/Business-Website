@@ -247,10 +247,10 @@ const Navbar = () => {
                         transition={{ delay: index * 0.15, ease: "easeOut" }}
                         to={dropdownItem.href}
                         className={getMobileSubLinkClass}
-                        // Mobile: Only onClick for sub-dropdowns. No onMouseEnter/onMouseLeave here.
+                       
                         onClick={(e) => {
                           if (dropdownItem.dropdown) {
-                            e.preventDefault(); // Prevent navigation for sub-dropdown parent link
+                            e.preventDefault(); 
                             setOpenSubDropdown(
                               openSubDropdown === dropdownItem.name
                                 ? null
