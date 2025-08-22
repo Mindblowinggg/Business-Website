@@ -93,7 +93,7 @@ const Navbar = () => {
           </motion.h1>
         </div>
 
-        {/* Desktop Navbar (Large Screens) */}
+        {/* Desktop Navbar */}
         <motion.div className="navbar gap-20 hidden px-2 lg:flex items-center">
           {navLinks.map((link, index) => (
             <div
