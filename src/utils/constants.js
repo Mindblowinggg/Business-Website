@@ -1,48 +1,48 @@
 const navLinks = [
   {
     name: "Home",
-    href: "/", // Change from "#home" to "/" for the home page
+    href: "/", 
   },
   {
     name: "Portfolio",
-    href: "/portfolio", // Change from "#portfolio" to "/portfolio"
+    href: "/portfolio", 
     dropdown: [
       {
         name: "Option 1",
-        href: "/portfolio/option1", // Add a distinct path for dropdown item
+        href: "/portfolio/option1", 
         dropdown: [
-          { name: "Sub-option 1.1", href: "/portfolio/option1/sub1" }, // Distinct path
-          { name: "Sub-option 1.2", href: "/portfolio/option1/sub2" }, // Distinct path
+          { name: "Sub-option 1.1", href: "/portfolio/option1/sub1" }, 
+          { name: "Sub-option 1.2", href: "/portfolio/option1/sub2" }, 
         ],
       },
       {
         name: "Option 2",
-        href: "/portfolio/option2", // Distinct path
+        href: "/portfolio/option2", 
         dropdown: [
-          { name: "Sub-option 2.1", href: "/portfolio/option2/sub1" }, // Distinct path
-          { name: "Sub-option 2.2", href: "/portfolio/option2/sub2" }, // Distinct path
+          { name: "Sub-option 2.1", href: "/portfolio/option2/sub1" }, 
+          { name: "Sub-option 2.2", href: "/portfolio/option2/sub2" }, 
         ],
       },
-      { name: "Option 3", href: "/portfolio/option3" }, // Distinct path
+      { name: "Option 3", href: "/portfolio/option3" }, 
     ],
   },
   {
     name: "Services",
-    href: "/services", // Change from "#services" to "/services"
+    href: "/services", 
     dropdown: [
       {
         name: "Option 1",
-        href: "/services/option1", // Distinct path
+        href: "/services/option1", 
         dropdown: [
-          { name: "Sub-option 1.1", href: "/services/option1/sub1" }, // Distinct path
-          { name: "Sub-option 1.2", href: "/services/option1/sub2" }, // Distinct path
+          { name: "Sub-option 1.1", href: "/services/option1/sub1" }, 
+          { name: "Sub-option 1.2", href: "/services/option1/sub2" }, 
         ],
       },
-      { name: "Option 2", href: "/services/option2" }, // Distinct path
-      { name: "Option 3", href: "/services/option3" }, // Distinct path
+      { name: "Option 2", href: "/services/option2" }, 
+      { name: "Option 3", href: "/services/option3" }, 
     ],
   },
-  { name: "Contact", href: "/contact" }, // Change from "#contact" to "/contact"
+  { name: "Contact", href: "/contact" }, 
 ];
 
 export { navLinks };
