@@ -1,24 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "/assets/logo.png"; // सुनिश्चित करें कि लोगो public/assets फोल्डर में है
+import logo from "/assets/logo.png"; 
 import { IoMdMenu } from "react-icons/io";
-import "../index.css"; // अगर यह CSS फाइल मौजूद है
+import "../index.css"; 
 import { IoIosArrowDown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { useState, useEffect } from "react";
-import { navLinks } from "../utils/constants"; // सुनिश्चित करें कि navLinks सही पाथ से आ रहे हैं
+import { navLinks } from "../utils/constants"; 
 import { NavLink } from "react-router-dom";
 
-// NavLink को Framer Motion कंपोनेंट में बदलें
+
 const MotionNavLink = motion(NavLink);
 
 const Navbar = () => {
   const [openMainDropdown, setOpenMainDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
-  const [menuopen, setmenuopen] = useState(false); // मोबाइल मेनू ओपन/क्लोज के लिए
-  const [scrolled, setScrolled] = useState(false); // स्क्रॉल इफेक्ट के लिए
+  const [menuopen, setmenuopen] = useState(false); 
+  const [scrolled, setScrolled] = useState(false); 
 
-  // स्क्रॉल हैंडलिंग
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 10) {
@@ -29,13 +29,13 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // कंपोनेंट माउंट होने पर एक बार चलाएं
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // NavLink के लिए क्लास नाम जनरेट करने के फंक्शन
+ 
   const getNavLinkClass = ({ isActive }) =>
     `flex px-2 text-lg font-semibold transition duration-300 ${
       isActive
@@ -71,6 +71,7 @@ const Navbar = () => {
         `}
     >
       <div className="flex justify-between items-center px-4 py-2">
+
         {/* Logo and Site Title */}
         <div className="flex justify-center items-center">
           <motion.img
