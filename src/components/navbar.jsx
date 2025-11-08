@@ -186,7 +186,13 @@ const Navbar = () => {
         >
           <MenuButton
             isOpen={menuopen}
-            onClick={() => setmenuopen(!menuopen)}
+            onClick={() => {
+              setmenuopen(!menuopen);
+              if (menuopen) {
+                setOpenMainDropdown(null);
+                setOpenSubDropdown(null);
+              }
+            }}
           />
         </motion.div>
       </div>
@@ -198,38 +204,48 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#74C69D] py-10 "
+            transition={{
+              duration: 0.35,
+              ease: "linear",
+            }}
+            className="lg:hidden bg-[#74C69D] absolute top-full px-5 right-0 w-full py-5 "
           >
             {navLinks.map((link, index) => (
               <div key={link.name} className="relative">
-                <MotionNavLink
-                  initial={{ opacity: 0, y: 0 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.15, ease: "easeOut" }}
-                  to={link.href}
-                  className={getMobileLinkClass}
-                  // Mobile: Only onClick for dropdowns. No onMouseEnter/onMouseLeave here.
-                  onClick={(e) => {
-                    if (link.dropdown) {
-                      e.preventDefault(); // Prevent navigation for dropdown parent link
-                      setOpenMainDropdown(
-                        openMainDropdown === link.name ? null : link.name
-                      );
-                    } else {
-                      setmenuopen(false); // Close mobile menu if it's a direct link
-                      setOpenMainDropdown(null); // Close any open main dropdown
-                      setOpenSubDropdown(null); // Close any open sub dropdown
-                    }
-                  }}
-                >
-                  {link.name}
-                  {link.dropdown && (
-                    <span className="float-right mt-1 ml-1">
-                      <IoIosArrowDown />
-                    </span>
-                  )}
-                </MotionNavLink>
+                <AnimatePresence>
+                  <MotionNavLink
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{
+                      delay: index * 0.15,
+                      ease: "linear",
+                      duration: 0.45,
+                    }}
+                    to={link.href}
+                    className={getMobileLinkClass}
+                    // Mobile: Only onClick for dropdowns. No onMouseEnter/onMouseLeave here.
+                    onClick={(e) => {
+                      if (link.dropdown) {
+                        e.preventDefault(); // Prevent navigation for dropdown parent link
+                        setOpenMainDropdown(
+                          openMainDropdown === link.name ? null : link.name
+                        );
+                      } else {
+                        setmenuopen(false); // Close mobile menu if it's a direct link
+                        setOpenMainDropdown(null); // Close any open main dropdown
+                        setOpenSubDropdown(null); // Close any open sub dropdown
+                      }
+                    }}
+                  >
+                    {link.name}
+                    {link.dropdown && (
+                      <span className="float-right mt-1 ml-1">
+                        <IoIosArrowDown />
+                      </span>
+                    )}
+                  </MotionNavLink>
+                </AnimatePresence>
 
                 {/* Mobile Main Dropdown Menu */}
                 {link.dropdown && openMainDropdown === link.name && (
