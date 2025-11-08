@@ -198,8 +198,8 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-[#74C69D] py-10"
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-[#74C69D] py-10 "
           >
             {navLinks.map((link, index) => (
               <div key={link.name} className="relative">
