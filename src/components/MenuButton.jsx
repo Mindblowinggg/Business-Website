@@ -2,7 +2,7 @@ import React from "react";
 
 const MenuButton = ({ isOpen, onClick }) => {
   const svgBaseClasses =
-    "w-7 h-7 overflow-visible [transition:transform_.35s_ease] [&_path]:[transition:transform_.35s_ease]";
+    "w-7 h-7 overflow-visible [transition:transform_.55s_ease] [&_path]:[transition:transform_.55s_ease]";
 
   const svgRotation = isOpen ? "rotate-45" : "";
 
@@ -19,7 +19,7 @@ const MenuButton = ({ isOpen, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="group flex items-center justify-center relative z-10 [transition:all_0.5s_ease] rounded-[0.375rem] p-[5px] cursor-pointer border border-[#999] outline-none focus-visible:outline-0"
+      className="group flex items-center justify-center relative z-10 [transition:all_.55s_ease] rounded-[0.375rem] p-[5px] cursor-pointer border border-[#fff] outline-none focus-visible:outline-0"
     >
       <svg
         fill="currentColor"

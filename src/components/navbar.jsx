@@ -1,10 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import logo from "/assets/logo.png";
-import { IoMdMenu } from "react-icons/io";
 import "../index.css";
 import { IoIosArrowDown } from "react-icons/io";
-import { RxCross1 } from "react-icons/rx";
 import { useState, useEffect } from "react";
 import { navLinks } from "../utils/constants";
 import { NavLink } from "react-router-dom";
