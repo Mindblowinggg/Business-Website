@@ -39,20 +39,20 @@ const Contactpage = () => {
             id="name"
             value={name}
             onChange={(event) => SetName(event.target.value)}
-            className="shadow appearance-none border border-black rounded w-full py-2 px-3 text-gray-800 bg-gray-300 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500"
+            className=" appearance-none  rounded w-full py-2 px-3 text-black bg-zinc-300 leading-tight focus:outline-none focus:ring-2 focus:ring-[#74C69D] "
           />
           <label
             className="block text-gray-700 text-sm font-bold mb-1 mt-5 "
             htmlFor="email"
           >
-            Email
+            Email:
           </label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(event) => SetEmail(event.target.value)}
-            className="shadow appearance-none border border-black rounded w-full py-2 px-3 text-gray-800 bg-gray-300 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-blue-500"
+            className=" appearance-none  rounded w-full py-2 px-3 text-black bg-gray-300 leading-tight focus:outline-none  focus:ring-2 focus:ring-[#74C69D] "
           />
           <button
             type="submit"
