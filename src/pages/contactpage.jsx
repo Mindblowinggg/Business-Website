@@ -56,13 +56,12 @@ const Contactpage = () => {
           />
           <button
             type="submit"
-            className="bg-[#74C69D]   hover:bg-[#529172]  cursor-pointer text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mt-10"
+            className="bg-[#74C69D]   hover:bg-[#529172]  cursor-pointer text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-[40%] m-auto mt-10"
           >
             submit
           </button>
         </form>
         <div className=" w-auto max-w-[450px] h-[200px]  sm:h-[300px] mb-25 md:mb-0 ">
-         
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.332179421566!2d-122.01154692409919!3d37.33464377209959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb596e9e188fd%3A0x3b0d8391510688f0!2sApple%20Park!5e0!3m2!1sen!2sin!4v1752400836366!5m2!1sen!2sin"
             loading="lazy"
