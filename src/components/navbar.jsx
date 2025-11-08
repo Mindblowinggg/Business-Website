@@ -63,7 +63,7 @@ const Navbar = () => {
     <motion.nav
       className={`
         fixed w-full top-0 left-0 z-50 px-5 pb-3 pt-3 sm:py-5 sm:px-14 md:mb-10 mb-3
-        ${scrolled ? "bg-[#32ac6fa2] backdrop-blur-2xl" : "bg-[#74C69D]"}
+        ${scrolled ? "bg-[#32ac6fa2] backdrop-blur-xl" : "bg-[#74C69D]"}
         `}
     >
       <div className="flex justify-between items-center px-4 py-2">
@@ -220,7 +220,7 @@ const Navbar = () => {
                     transition={{
                       delay: index * 0.15,
                       ease: "linear",
-                      duration: 0.45,
+                      duration: 0.5,
                     }}
                     to={link.href}
                     className={getMobileLinkClass}
