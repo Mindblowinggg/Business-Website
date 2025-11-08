@@ -1,24 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "/assets/logo.png"; 
+import logo from "/assets/logo.png";
 import { IoMdMenu } from "react-icons/io";
-import "../index.css"; 
+import "../index.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { useState, useEffect } from "react";
-import { navLinks } from "../utils/constants"; 
+import { navLinks } from "../utils/constants";
 import { NavLink } from "react-router-dom";
-
+import MenuButton from "./MenuButton";
 
 const MotionNavLink = motion(NavLink);
 
 const Navbar = () => {
   const [openMainDropdown, setOpenMainDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
-  const [menuopen, setmenuopen] = useState(false); 
-  const [scrolled, setScrolled] = useState(false); 
+  const [menuopen, setmenuopen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 10) {
@@ -35,7 +34,6 @@ const Navbar = () => {
     };
   }, []);
 
- 
   const getNavLinkClass = ({ isActive }) =>
     `flex px-2 text-lg font-semibold transition duration-300 ${
       isActive
@@ -71,7 +69,6 @@ const Navbar = () => {
         `}
     >
       <div className="flex justify-between items-center px-4 py-2">
-
         {/* Logo and Site Title */}
         <div className="flex justify-center items-center">
           <motion.img
@@ -187,14 +184,12 @@ const Navbar = () => {
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          onClick={() => setmenuopen(!menuopen)}
           className="flex lg:hidden text-white justify-center items-center cursor-pointer"
         >
-          {menuopen ? (
-            <RxCross1 className="w-8 h-8" />
-          ) : (
-            <IoMdMenu className="w-9 h-9" />
-          )}
+          <MenuButton
+            isOpen={menuopen}
+            onClick={() => setmenuopen(!menuopen)}
+          />
         </motion.div>
       </div>
 
@@ -247,10 +242,9 @@ const Navbar = () => {
                         transition={{ delay: index * 0.15, ease: "easeOut" }}
                         to={dropdownItem.href}
                         className={getMobileSubLinkClass}
-                       
                         onClick={(e) => {
                           if (dropdownItem.dropdown) {
-                            e.preventDefault(); 
+                            e.preventDefault();
                             setOpenSubDropdown(
                               openSubDropdown === dropdownItem.name
                                 ? null
