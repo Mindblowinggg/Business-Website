@@ -40,7 +40,7 @@ const Teaminfo = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper w-[50%] mb-20 h-auto py-10 px-5 mx-auto"
+        className="mySwiper lg:w-[40%] w-[90%] mb-20 h-auto py-10 px-5 mx-auto"
       >
         {teamMembers.map((member, index) => (
           <SwiperSlide
