@@ -6,11 +6,11 @@ import HomePage from "./pages/HomePage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ServicesPage from "./pages/ServicesPage";
 import Contactpage from "./pages/contactpage";
-
+// hello....
 function App() {
   return (
     <BrowserRouter>
-      <div className="fixed top-0 left-0 right-0 z-50"> 
+      <div className="fixed top-0 left-0 right-0 z-50">
         <Navbar />
       </div>
 
@@ -25,7 +25,7 @@ function App() {
         </div>
       </main>
 
-      <div className="fixed bottom-0 left-0 right-0 z-50"> 
+      <div className="fixed bottom-0 left-0 right-0 z-50">
         <Footer />
       </div>
     </BrowserRouter>
